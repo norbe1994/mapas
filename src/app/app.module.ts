@@ -4,10 +4,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { AppRoutingModule } from './app-routing.module'
 import { MaterialModule } from './material.module'
 // componentes
-import { AppComponent } from './app.component'
+import { AppComponent } from './app.component';
+import { MapaComponent } from './components/mapa/mapa.component'
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, MapaComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule],
   providers: [],
   bootstrap: [AppComponent]
