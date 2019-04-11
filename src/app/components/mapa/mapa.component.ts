@@ -8,13 +8,14 @@ import { Marcador } from 'src/app/classes/marcador.class'
 })
 export class MapaComponent implements OnInit {
   marcadores: Marcador[] = []
-  // Hamm Alemania
+  /*   // Hamm Alemania
   lat: number = 51.678418
-  lng: number = 7.809007
+  lng: number = 7.809007 */
 
   constructor() {
-    const nuevoMarcador = new Marcador(this.lat, this.lng)
-    this.marcadores.push(nuevoMarcador)
+    if (localStorage.getItem('marcadores')) {
+      this.marcadores = JSON.parse(localStorage.getItem('marcadores'))
+    }
   }
 
   ngOnInit() {}
@@ -23,5 +24,10 @@ export class MapaComponent implements OnInit {
     const coords: { lat: number; lng: number } = e.coords
     const nuevoMarcador = new Marcador(coords.lat, coords.lng)
     this.marcadores.push(nuevoMarcador)
+    this.guardarStorage()
+  }
+
+  guardarStorage() {
+    localStorage.setItem('marcadores', JSON.stringify(this.marcadores))
   }
 }
