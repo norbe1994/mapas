@@ -8,9 +8,9 @@ import { Marcador } from 'src/app/classes/marcador.class'
 })
 export class MapaComponent implements OnInit {
   marcadores: Marcador[] = []
-  /*   // Hamm Alemania
+  // Hamm Alemania
   lat: number = 51.678418
-  lng: number = 7.809007 */
+  lng: number = 7.809007
 
   constructor() {
     if (localStorage.getItem('marcadores')) {
@@ -24,6 +24,11 @@ export class MapaComponent implements OnInit {
     const coords: { lat: number; lng: number } = e.coords
     const nuevoMarcador = new Marcador(coords.lat, coords.lng)
     this.marcadores.push(nuevoMarcador)
+    this.guardarStorage()
+  }
+
+  borrarMarcador(i: number) {
+    this.marcadores.splice(i, 1)
     this.guardarStorage()
   }
 
