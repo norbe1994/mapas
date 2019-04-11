@@ -5,10 +5,25 @@ import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatButtonModule } from '@angular/material/button'
 import { MatProgressBarModule } from '@angular/material/progress-bar'
 import { MatCardModule } from '@angular/material/card'
+import { MatSnackBarModule } from '@angular/material/snack-bar'
 
 @NgModule({
   declarations: [],
-  imports: [CommonModule, MatToolbarModule, MatButtonModule, MatProgressBarModule, MatCardModule],
-  exports: [CommonModule, MatToolbarModule, MatButtonModule, MatProgressBarModule, MatCardModule]
+  imports: [
+    CommonModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatCardModule,
+    MatSnackBarModule
+  ],
+  exports: [
+    CommonModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatProgressBarModule,
+    MatCardModule,
+    MatSnackBarModule
+  ]
 })
 export class MaterialModule {}
